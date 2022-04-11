@@ -11,8 +11,14 @@ export default function infoUser(msg, member, client) {
         name: "nickname",
         value: member.nickname ? member.nickname : "nickname not set",
         inline: true,
-      }
+      },
+      {
+        name: "username",
+        value: member.user.username,
+        inline: true
+      },
     )
+    .setThumbnail(member.user.displayAvatarURL())
     .setFooter(
       `Command used by ${msg.author.username}`,
       msg.author.displayAvatarURL()

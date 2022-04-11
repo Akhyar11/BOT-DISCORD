@@ -32,14 +32,9 @@ const info = (msg, args, client) => {
     case "user":
       const mention = msg.mentions.users.first() || msg.author;
       const member = msg.guild.members.cache.get(mention.id);
-      console.log(member);
-      if (args[2]) {
-        if (args[2] === "user") {
-          infoUser(msg, member, client);
-        }
-      } else {
-        infoUser(msg, member, client);
-      }
+      console.log(member)
+      infoUser(msg, member, client);
+      
   }
 };
 
